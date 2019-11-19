@@ -4,6 +4,7 @@ const Discord = require('discord.js');									//enables discord.js library
 const client = new Discord.Client();									//initializes client 
 client.commands = new Discord.Collection();								//initializes collection of all command files
 const { prefix} = require('./config.json');								//pulls prefix from configuration file 
+const Sequelize = require('sequelize');
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -12,22 +13,30 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
-var mysql = require('mysql');
 
-//SQL connection is broken. Need to attempt a different method: https://discordjs.guide/sequelize/#beta-creating-the-model
-/*var con = mysql.createConnection({
-  host: process.env.DBHOST,
-  user: process.env.DBU,
-  password: process.env.DBPASS,
-  database: process.env.DBN
+const sequelize = new Sequelize(process.env.DBN, process.env.DBU, process.env.DBPASS, {
+	host: process.env.DBHOST,
+	dialect: 'mysql',
+	logging: false,
 });
 
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});*/
 
-const cooldowns = new Discord.Collection();
+const Profiles = sequelize.define('profiles', {
+	profileID: {
+		type: Sequelize.STRING,
+		unique: true,
+	},
+	MessageID: Sequelize.TEXT,
+	ServerID: Sequelize.STRING,
+	UserID: Sequelize.STRING,
+	TagID:	Sequelize.INTEGER
+	},
+});											//UNTESTED Sequelize table definition
+
+client.once('ready', () => {
+	Tags.sync();							//UNTESTED Sequelize table creation
+	console.log("Table created, database ready.")
+});
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)		//boots client
