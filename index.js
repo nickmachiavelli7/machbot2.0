@@ -31,7 +31,7 @@ const Profiles = sequelize.define('profiles', {
 	UserID: Sequelize.STRING,
 	TagID:	Sequelize.INTEGER
 	},
-});											//UNTESTED Sequelize table definition
+);											//UNTESTED Sequelize table definition
 
 client.once('ready', () => {
 	Tags.sync();							//UNTESTED Sequelize table creation
