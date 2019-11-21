@@ -5,6 +5,7 @@ const client = new Discord.Client();									//initializes client
 client.commands = new Discord.Collection();								//initializes collection of all command files
 const { prefix} = require('./config.json');								//pulls prefix from configuration file 
 const Sequelize = require('sequelize');
+const mysql2 = require('mysql2');
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
@@ -17,6 +18,7 @@ for (const file of commandFiles) {
 const sequelize = new Sequelize(process.env.DBN, process.env.DBU, process.env.DBPASS, {
 	host: process.env.DBHOST,
 	dialect: 'mysql',
+	dialectModule: mysql2,
 	logging: false,
 });
 
@@ -33,8 +35,16 @@ const Profiles = sequelize.define('profiles', {
 	},
 );											//UNTESTED Sequelize table definition
 
+sequelize.authenticate().complete(function (err) {
+ if (err) {
+    console.log('There is connection in ERROR');	//if there's an error, throw the error. Also, build an error handler at some point, so you know what broke, you fuck.
+ } else {
+    console.log('Connection has been established successfully');
+ }
+});
+
 client.once('ready', () => {
-	Tags.sync();							//UNTESTED Sequelize table creation
+	Profiles.sync();							//UNTESTED Sequelize table creation
 	console.log("Table created, database ready.")
 });
 
