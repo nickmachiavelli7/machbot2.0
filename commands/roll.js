@@ -26,5 +26,8 @@ module.exports = {
 			else if(roll == 20){
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
+			else{
+				message.channel.send('You rolled a ' + roll + '.');
+			}
 	},
 };
