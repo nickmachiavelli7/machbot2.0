@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'roll',
-	description: 'Rolls the dice. Format: '+ prefix +'roll NdS where N is the number of dice and S is the size of those dice. You can also just call the command with a single number to roll one die of that size.',
+	description: 'Rolls the dice. Format: "roll NdS" where N is the number of dice and S is the size of those dice. You can also just call the command with a single number to roll one die of that size.',
 	cooldown: 5,
 	execute(message, args) {
 		const messageWords = message.content.split(' ');
