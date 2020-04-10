@@ -6,9 +6,14 @@ module.exports = {
 		const request = args[0];
 		if (request.includes('d')){
 			rolls = args[0].split('d')[0] / 1;
-			sides = args[0].split('d')[1];
+			sides = args[0].split('d')[1] / 1;
+			const sum = 0;
+			const i;
+			for(i=0;i<rolls;i++){
+				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
+			}
+			message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ sum +'.');
 			
 		}
-		message.channel.send('You asked for '+ rolls +' rolls of a '+ sides +'sided die.');
 	},
 };
