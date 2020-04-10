@@ -8,22 +8,24 @@ module.exports = {
 		if (request.includes('d')){
 			rolls = args[0].split('d')[0] / 1;
 			sides = args[0].split('d')[1] / 1;
+			mod = (args[1] / 1);
 			let sum = 0;
 			let i = 0;
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
-			sum= sum + (args[1] / 1);
+			if (!isNaN(mod))
+				sum= sum + mod;
 			message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ sum +'.');
 			
 		}
 		else if(!isNaN(request.includes('d'))){
 			sides = args[0] / 1;
 		roll = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1);
-			if((roll == 1) && (sides = 20)){
+			if(roll == 1 && sides = 20){
 				message.channel.send('CRITICAL FAILURE - you rolled a nat 1!');
 			}
-			else if((roll == 20) && (sides = 20)){
+			else if(roll == 20 && sides = 20){
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
 			else{
