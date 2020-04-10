@@ -13,7 +13,7 @@ module.exports = {
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
-			sum= sum + args[1];
+			sum= sum + (args[1] / 1);
 			message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ sum +'.');
 			
 		}
