@@ -33,6 +33,5 @@ module.exports = {
 		else
 			message.channel.send('Something you did was bad. Try not being bad.');
 	},
-			else
-			message.channel.send('Something you did was bad. Try not being bad.');
+
 };
