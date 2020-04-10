@@ -4,7 +4,7 @@ module.exports = {
 	cooldown: 5,
 	execute(message, args) {
 		const request = args[0];
-		if request.includes('d'){
+		if (request.includes('d')){
 			rolls = args[0].split('d')[0] / 1;
 			sides = args[0].split('d')[1];
 			
