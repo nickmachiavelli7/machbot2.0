@@ -7,8 +7,8 @@ module.exports = {
 		if (request.includes('d')){
 			rolls = args[0].split('d')[0] / 1;
 			sides = args[0].split('d')[1] / 1;
-			const sum = 0;
-			const i;
+			let sum = 0;
+			let i = 0;
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
