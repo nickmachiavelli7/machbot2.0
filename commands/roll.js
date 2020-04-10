@@ -22,10 +22,10 @@ module.exports = {
 		else if(!isNaN(request.includes('d'))){
 			sides = args[0] / 1;
 		roll = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1);
-			if(roll == 1 && sides = 20){
+			if((roll == 1) && (sides == 20)){
 				message.channel.send('CRITICAL FAILURE - you rolled a nat 1!');
 			}
-			else if(roll == 20 && sides = 20){
+			else if((roll == 20) && (sides ==20)){
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
 			else{
