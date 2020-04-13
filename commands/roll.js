@@ -31,7 +31,7 @@ module.exports = {
 			disad = args[2];
 		}*/
 		
-		if((disad = 'a') || (disad = 'A'))
+		if((disad == 'a') || (disad == 'A'))
 		{
 			if (request.includes('d')){
 				rolls = args[0].split('d')[0] / 1;
@@ -55,7 +55,7 @@ module.exports = {
 
 		}
 		}
-		else if((disad = 'd') || (disad = 'D'))
+		else if((disad == 'd') || (disad == 'D'))
 		{
 			if (request.includes('d')){
 				rolls = args[0].split('d')[0] / 1;
