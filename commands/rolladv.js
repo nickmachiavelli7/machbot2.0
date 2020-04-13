@@ -17,6 +17,7 @@ module.exports = {
 			if (!isNaN(mod))
 				sum= sum + mod;
 			let num1 = sum;
+			sum = 0;
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
