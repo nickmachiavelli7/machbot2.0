@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'rolladv',
-	description: 'Rolls the dice twice and takes the higher value. Format: "rolladv NdS (+/-M)" where N is the number of dice and S is the size of those dice. M is an optional modifier to the roll. A space must be included before the modifier. You can also just call the command with a single number to roll one die of that size.',
+	name: 'rolldis',
+	description: 'Rolls the dice twice and takes the lower value. Format: "rolldis NdS (+/-M)" where N is the number of dice and S is the size of those dice. M is an optional modifier to the roll. A space must be included before the modifier. You can also just call the command with a single number to roll one die of that size.',
 	args: true,
 	cooldown: 5,
 	execute(message, args) {
@@ -24,10 +24,10 @@ module.exports = {
 			if (!isNaN(mod))
 				sum= sum + mod;
 			let num2 = sum;
-			if (num1 >= num2)
-				message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with advantage and got a total of '+ num1 +'.');
+			if (num1 <= num2)
+				message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with disadvantage and got a total of '+ num1 +'.');
 			else
-				message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with advantage and got a total of '+ num2 +'.');
+				message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with disadvantage and got a total of '+ num2 +'.');
 			
 		}
 		else if(!isNaN(request.includes('d'))){
@@ -35,7 +35,7 @@ module.exports = {
 		num1 = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1);
 		num2 = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1);
 		
-		if(num1 >= num2)
+		if(num1 <= num2)
 			roll = num1;
 		else
 			roll = num2;
@@ -47,7 +47,7 @@ module.exports = {
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
 			else{
-				message.channel.send('You rolled a ' + roll + ' with advantage.');
+				message.channel.send('You rolled a ' + roll + ' with disadvantage.');
 			}
 		}
 		else
