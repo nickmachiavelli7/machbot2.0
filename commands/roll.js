@@ -4,14 +4,6 @@ module.exports = {
 	args: true,
 	cooldown: 5,
 	execute(message, args) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-		let roller = function (rolls, sides, mod) {
-			var sum = 0;
-			var i = 0;
-=======
-=======
->>>>>>> parent of d8345e2... Adding (dis)advantage capability, and more.
 		const request = args[0];
 		if (request.includes('d')){
 			rolls = args[0].split('d')[0] / 1;
@@ -19,99 +11,11 @@ module.exports = {
 			mod = (args[1] / 1);
 			let sum = 0;
 			let i = 0;
->>>>>>> parent of d8345e2... Adding (dis)advantage capability, and more.
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
 			if (!isNaN(mod))
 				sum= sum + mod;
-<<<<<<< HEAD
-<<<<<<< HEAD
-			return sum;
-			};
-		const request = args[0];
-		
-		var disad = null;
-		if(!isNaN(args[1]))
-			mod = (args[1] / 1);
-		/*else if(args[1] = null)
-		{
-			mod = 0;
-			disad = args[1];
-			
-		}
-		else
-		{
-			mod = 0;
-			disad = args[2];
-		}*/
-		
-		if((disad == 'a') || (disad == 'A'))
-		{
-			if (request.includes('d')){
-				rolls = args[0].split('d')[0] / 1;
-				sides = args[0].split('d')[1] / 1;
-
-				num1 = roller(rolls,sides,mod);
-				num2 = roller(rolls,sides,mod);
-				if (num1 >= num2)
-					message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with advantage and got a total of '+ num1 +'.');
-				else
-					message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with advantage and got a total of '+ num2 +'.');
-						
-			}
-			else if(!isNaN(request.includes('d'))){
-				rolls = 1;
-				sides = args[0] / 1;
-				num1 = roller(1,sides,0);
-				num2 = roller(1,sides,0);
-				if (num1 >= num2)
-					message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with advantage and got a total of '+ num2 +'.');
-
-		}
-		}
-		else if((disad == 'd') || (disad == 'D'))
-		{
-			if (request.includes('d')){
-				rolls = args[0].split('d')[0] / 1;
-				sides = args[0].split('d')[1] / 1;
-				num1 = roller(rolls,sides,mod);
-				num2 = roller(rolls,sides,mod);
-				if (num1 <= num2)
-					message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with disadvantage and got a total of '+ num1 +'.');
-				else
-					message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice with disadvantage and got a total of '+ num2 +'.');
-						
-			}
-			else if(!isNaN(request.includes('d'))){
-				sides = args[0] / 1;
-				num1 = roller(1,sides,0);
-				num2 = roller(1,sides,0);
-
-		}
-
-		}
-		else if(disad = null){
-			if (request.includes('d')){
-				rolls = args[0].split('d')[0] / 1;
-				sides = args[0].split('d')[1] / 1;
-				num1 = roller(rolls,sides, mod);
-				message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ num1 +'.');
-=======
-			message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ sum +'.');
-			
-		}
-		else if(!isNaN(request.includes('d'))){
-			sides = args[0] / 1;
-		roll = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1);
-			if(roll == 1 && sides = 20){
-				message.channel.send('CRITICAL FAILURE - you rolled a nat 1!');
-			}
-			else if(roll == 20 && sides = 20){
-				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
->>>>>>> parent of d8345e2... Adding (dis)advantage capability, and more.
-			}
-=======
 			message.channel.send('You rolled '+ rolls +' '+ sides +'-sided dice and got a total of '+ sum +'.');
 			
 		}
@@ -124,7 +28,6 @@ module.exports = {
 			else if((roll == 20) && (sides ==20)){
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
->>>>>>> parent of d8345e2... Adding (dis)advantage capability, and more.
 			else{
 				message.channel.send('You rolled a ' + roll + '.');
 			}
