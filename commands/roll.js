@@ -16,18 +16,19 @@ module.exports = {
 			};
 		const request = args[0];
 		
+		disad = null;
 		if(!isNaN(args[1]))
 			mod = (args[1] / 1);
 		else if(args[1] = null)
 		{
 			mod = 0;
-			disad = args[2];
+			disad = args[1];
 			
 		}
 		else
 		{
 			mod = 0;
-			disad = args[1];
+			disad = args[2];
 		}
 		
 		if((disad = 'a') || (disad = 'A'))
@@ -53,7 +54,7 @@ module.exports = {
 
 		}
 		}
-		if((disad = 'd') || (disad = 'D'))
+		else if((disad = 'd') || (disad = 'D'))
 		{
 			if (request.includes('d')){
 				rolls = args[0].split('d')[0] / 1;
@@ -74,7 +75,7 @@ module.exports = {
 		}
 
 		}
-		else{
+		else if(disad = null){
 			if (request.includes('d')){
 				rolls = args[0].split('d')[0] / 1;
 				sides = args[0].split('d')[1] / 1;
