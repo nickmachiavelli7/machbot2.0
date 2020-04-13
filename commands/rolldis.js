@@ -47,7 +47,7 @@ module.exports = {
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
 			else{
-				message.channel.send('You rolled a ' + roll + ' with disadvantage.');
+				message.channel.send('You rolled ' + num1 + ' and ' + num2 + ' for ' + roll + ' with disadvantage.');
 			}
 		}
 		else
