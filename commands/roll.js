@@ -99,7 +99,12 @@ module.exports = {
 			}
 		}
 		else
+		{
 			message.channel.send('Something you did was bad. Try not being bad.');
+			console.log('disad =' + disad);
+			console.log('mod =' + mod);
+		
+		}
 	},
 
 };
