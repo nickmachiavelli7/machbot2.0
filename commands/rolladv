@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'rolladv',
-	description: 'Rolls the dice twice and takes the higher value. Format: "roll NdS (+/-M)" where N is the number of dice and S is the size of those dice. M is an optional modifier to the roll. A space must be included before the modifier. You can also just call the command with a single number to roll one die of that size.',
+	description: 'Rolls the dice twice and takes the higher value. Format: "rolladv NdS (+/-M)" where N is the number of dice and S is the size of those dice. M is an optional modifier to the roll. A space must be included before the modifier. You can also just call the command with a single number to roll one die of that size.',
 	args: true,
 	cooldown: 5,
 	execute(message, args) {
