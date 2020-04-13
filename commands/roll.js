@@ -5,8 +5,8 @@ module.exports = {
 	cooldown: 5,
 	execute(message, args) {
 		let roller = function (rolls, sides, mod) {
-			let sum = 0;
-			let i = 0;
+			var sum = 0;
+			var i = 0;
 			for(i=0;i<rolls;i++){
 				sum = (Math.floor(Math.random() * (sides - 1 + 1) ) + 1) + sum;
 			}
@@ -16,7 +16,7 @@ module.exports = {
 			};
 		const request = args[0];
 		
-		disad = null;
+		var disad = null;
 		if(!isNaN(args[1]))
 			mod = (args[1] / 1);
 		else if(args[1] = null)
