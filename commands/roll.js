@@ -19,7 +19,7 @@ module.exports = {
 		var disad = null;
 		if(!isNaN(args[1]))
 			mod = (args[1] / 1);
-		/*else if(args[1] = null)
+		else if(args[1] = null)
 		{
 			mod = 0;
 			disad = args[1];
@@ -29,7 +29,7 @@ module.exports = {
 		{
 			mod = 0;
 			disad = args[2];
-		}*/
+		}
 		
 		if((disad == 'a') || (disad == 'A'))
 		{
