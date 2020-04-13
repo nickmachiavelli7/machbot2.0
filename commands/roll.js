@@ -46,6 +46,7 @@ module.exports = {
 						
 			}
 			else if(!isNaN(request.includes('d'))){
+				rolls = 1;
 				sides = args[0] / 1;
 				num1 = roller(1,sides,0);
 				num2 = roller(1,sides,0);
