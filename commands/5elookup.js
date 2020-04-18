@@ -18,12 +18,14 @@ module.exports = {
 			res.on("end", () => {
 			body = JSON.parse(body);
 			console.log(body);
-			});
-			});
-			console.log('Lookup success.');
 			var stringify = ' ';
 			stringify = JSON.stringify(body);
 			message.channel.send(body);
+			});
+			});
+			console.log('Lookup success.');
+			
+
 		}
 		
 }
