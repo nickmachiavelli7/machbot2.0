@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Looks up a value in the D&D 5e database. Specify "spell", "item", "monster", or "ability". If spaces are needed, use dashes instead. Example command would be >5elookup ability lay-on-hands.',
 	args: true,
 	execute(message, args) {
-		var url = 'http://www.dnd5eapi.co/api/';
+		var url = 'https://api.open5e.com/';
 		const http = require("http");
 		if (args[0] == 'spell')
 		{
