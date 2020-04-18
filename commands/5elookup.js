@@ -7,7 +7,8 @@ module.exports = {
 		const http = require("http");
 		if (args[0] == 'spell')
 		{
-			url = url + 'spells/?name=' + args[1];
+			var SpellName = args[1].replace('-','+');
+			url = url + 'spells/?name=' + SpellName;
 			http.get(url, res => {
 			res.setEncoding("utf8");
 			let body = "";
