@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'shutdown',
-	description: 'Turns off the bot. Requires developer permissions.',
+	description: 'Turns off the bot.',
 	execute(message, args) {
 		
 		if( message.author.id == process.env.DEVID)
@@ -12,7 +12,7 @@ module.exports = {
 		}
 		else
 		{
-		message.channel.send('You are not the developer. Access is denied. Also known as, fuck off, ya grimy twat.');
+		message.channel.send('You are not the developer. Access is denied.');
 		}
 	},
 };
