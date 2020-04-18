@@ -6,13 +6,17 @@ module.exports = {
 		var url = 'http://www.dnd5eapi.co/api/';
 		if (args[0] == 'spell')
 		{
-			url = url + 'spells/' + args[1];
-			fetch('https://example.com')
-			.then(response => response.json())
-			.then(data => {
-			console.log(data)
-			})
-  .catch(err => ...);
+			https.get(url, res => {
+			res.setEncoding("utf8");
+			let body = "";
+			res.on("data", data => {
+			body += data;
+			});
+			res.on("end", () => {
+			body = JSON.parse(body);
+			console.log(body);
+			});
+			});
 		}
 		
 };
