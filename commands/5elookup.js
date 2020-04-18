@@ -4,7 +4,7 @@ module.exports = {
 	args: true,
 	execute(message, args) {
 		var url = 'https://api.open5e.com/';
-		const http = require("http");
+		const https = require("https");
 		if (args[0] == 'spell')
 		{
 			var SpellName = args[1].replace('-','+');
