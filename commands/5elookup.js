@@ -4,9 +4,10 @@ module.exports = {
 	args: true,
 	execute(message, args) {
 		var url = 'http://www.dnd5eapi.co/api/';
+		const http = require("http");
 		if (args[0] == 'spell')
 		{
-			url.get(url, res => {
+			http.get(url, res => {
 			res.setEncoding("utf8");
 			let body = "";
 			res.on("data", data => {
