@@ -12,7 +12,7 @@ module.exports = {
 		}
 		else
 		{
-		message.channel.send('You are not the developer. Access is denied.');
+		message.channel.send('You are not the developer. Access is denied. In other words, fuck off, ya grimy twat.');
 		}
 	},
 };
