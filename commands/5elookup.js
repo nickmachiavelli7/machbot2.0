@@ -17,6 +17,7 @@ module.exports = {
 			console.log(body);
 			});
 			});
+			console.log('Lookup success.');
 		}
 		
 }
