@@ -6,7 +6,7 @@ module.exports = {
 		var url = 'http://www.dnd5eapi.co/api/';
 		if (args[0] == 'spell')
 		{
-			https.get(url, res => {
+			url.get(url, res => {
 			res.setEncoding("utf8");
 			let body = "";
 			res.on("data", data => {
