@@ -21,6 +21,8 @@ module.exports = {
 			});
 			});
 			console.log('Lookup success.');
+			var stringify = ' ';
+			stringify = JSON.stringify(body);
 			message.channel.send(body);
 		}
 		
