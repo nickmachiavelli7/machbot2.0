@@ -25,7 +25,7 @@ module.exports = {
 			if((roll == 1) && (sides == 20)){
 				message.channel.send('CRITICAL FAILURE - you rolled a nat 1!');
 			}
-			else if((roll == 20) && (sides ==20)){
+			else if((roll == 20) && (sides == 20)){
 				message.channel.send('CRITICAL SUCCESS! - you rolled a nat 20!');
 			}
 			else{
