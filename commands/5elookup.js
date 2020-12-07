@@ -20,7 +20,7 @@ module.exports = {
 			console.log(body);
 			var stringify = ' ';
 			stringify = JSON.stringify(body);
-			message.channel.send(stringify);
+			message.channel.send(body);
 			});
 			});
 			console.log('Lookup success.');
