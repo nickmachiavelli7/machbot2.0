@@ -8,6 +8,7 @@ const { joinVoiceChannel } = require('@discordjs/voice');				//constructs the vo
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 const connection = joinVoiceChannel({									//
@@ -16,6 +17,13 @@ const connection = joinVoiceChannel({									//
 	adapterCreator: channel.guild.voiceAdapterCreator,
 });
 >>>>>>> parent of 9bd4869 (missing comma)
+=======
+const connection = joinVoiceChannel({									//
+	channelId: 291051686557122570,
+	guildId: 291051685931909130,
+	adapterCreator: channel.guild.voiceAdapterCreator,
+});
+>>>>>>> parent of 65cc8fd (attempting a move to see if the code runs here)
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
 
@@ -45,11 +53,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)		//boots client
 });
 
-const connection = joinVoiceChannel({									
-	channelId: 291051686557122570,
-	guildId: 291051685931909130,
-	adapterCreator: channel.guild.voiceAdapterCreator,
-});
 
 client.on('message', message => {
 	
