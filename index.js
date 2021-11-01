@@ -4,8 +4,16 @@ const Discord = require('discord.js');									//enables discord.js library
 const client = new Discord.Client();									//initializes client 
 client.commands = new Discord.Collection();								//initializes collection of all command files
 const { prefix} = require('./config.json');								//pulls prefix from configuration file 
+const { joinVoiceChannel } = require('@discordjs/voice');				//constructs the voice channel connector
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+
+const connection = joinVoiceChannel({									//
+	channelId: 291051686557122570
+	guildId: 291051685931909130,
+	adapterCreator: channel.guild.voiceAdapterCreator,
+});
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
