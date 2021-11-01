@@ -19,7 +19,7 @@ const connection = joinVoiceChannel({									//
 >>>>>>> parent of 9bd4869 (missing comma)
 =======
 const connection = joinVoiceChannel({									//
-	channelId: 291051686557122570,
+	channelId: 291051686557122570
 	guildId: 291051685931909130,
 	adapterCreator: channel.guild.voiceAdapterCreator,
 });
