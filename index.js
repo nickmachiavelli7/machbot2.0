@@ -7,7 +7,15 @@ const { prefix} = require('./config.json');								//pulls prefix from configura
 const { joinVoiceChannel } = require('@discordjs/voice');				//constructs the voice channel connector
 
 
+<<<<<<< HEAD
 
+=======
+const connection = joinVoiceChannel({									//
+	channelId: 291051686557122570
+	guildId: 291051685931909130,
+	adapterCreator: channel.guild.voiceAdapterCreator,
+});
+>>>>>>> parent of 9bd4869 (missing comma)
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
 
