@@ -7,11 +7,7 @@ const { prefix} = require('./config.json');								//pulls prefix from configura
 const { joinVoiceChannel } = require('@discordjs/voice');				//constructs the voice channel connector
 
 
-const connection = joinVoiceChannel({									//
-	channelId: 291051686557122570,
-	guildId: 291051685931909130,
-	adapterCreator: channel.guild.voiceAdapterCreator,
-});
+
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
 
@@ -41,6 +37,11 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`)		//boots client
 });
 
+const connection = joinVoiceChannel({									
+	channelId: 291051686557122570,
+	guildId: 291051685931909130,
+	adapterCreator: channel.guild.voiceAdapterCreator,
+});
 
 client.on('message', message => {
 	
