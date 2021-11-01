@@ -6,6 +6,7 @@ client.commands = new Discord.Collection();								//initializes collection of a
 const { prefix} = require('./config.json');								//pulls prefix from configuration file 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -26,6 +27,9 @@ const connection = joinVoiceChannel({									//
 >>>>>>> parent of 65cc8fd (attempting a move to see if the code runs here)
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
+=======
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+>>>>>>> parent of 19eec67 (Attempt to add a voice channel connection)
 =======
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 >>>>>>> parent of 19eec67 (Attempt to add a voice channel connection)
