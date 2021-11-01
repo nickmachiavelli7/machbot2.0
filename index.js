@@ -4,8 +4,8 @@ const Discord = require('discord.js');									//enables discord.js library
 const client = new Discord.Client();									//initializes client 
 client.commands = new Discord.Collection();								//initializes collection of all command files
 const { prefix} = require('./config.json');								//pulls prefix from configuration file 
-const { joinVoiceChannel } = require('@discordjs/voice');				//constructs the voice channel connector
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -26,6 +26,9 @@ const connection = joinVoiceChannel({									//
 >>>>>>> parent of 65cc8fd (attempting a move to see if the code runs here)
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));		//initialize the command handler files
+=======
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+>>>>>>> parent of 19eec67 (Attempt to add a voice channel connection)
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
