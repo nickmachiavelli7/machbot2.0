@@ -43,6 +43,8 @@ const connection = joinVoiceChannel({
 	adapterCreator: channel.guild.voiceAdapterCreator,
 });
 
+
+
 client.on('message', message => {
 	
 	
